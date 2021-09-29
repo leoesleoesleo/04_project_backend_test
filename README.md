@@ -16,21 +16,13 @@ Y celerys que trabaja con colas de tareas asíncrona para trabajos que se basa e
 	```
 - Crear entorno virtual
 
-    anaconda
+    Ejemplo anaconda
 	```
 	conda create -n gestorComidas python=3.7.9 
 	```
 	```
-    	conda activate gestorComidas
+	conda activate gestorComidas
 	```
-	```
-	virtualenv
-	```
-	virtualenv gestorComidas -p python3.7.9
-    	```
-	```
-	source gestorComidas/bin/activate
-    	```
 
 - Navegar hasta la carpeta del proyecto para instalar dependencias
     ```
