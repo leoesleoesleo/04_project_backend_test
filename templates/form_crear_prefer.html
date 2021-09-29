@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block titulo %}form{% endblock titulo %}
+
+{% block cuerpo %}
+
+<form method="POST" enctype="multipart/form-data">
+	{% if res == 'conacceso' %}
+	   {% csrf_token %}
+		{{ form }}
+		<button type="submit">Crear ó Editar</button>
+	{% else %}
+		<h3>Las preferencias son solo hasta las 11:00 am</h3>
+	{% endif %}	
+</form>
+
+{% endblock cuerpo %}

@@ -1,0 +1,98 @@
+{% extends 'index.html' %}
+{% block titulo %}Admin{% endblock titulo %}
+
+{% block cuerpo %}
+
+<a style="float: right;" href="http://localhost:8000">Regresar al inicio</a>
+<h2 style="color: green;">Módulo Administrador</h2>
+<p>Bienvenido {{usuario}}</p>
+<br/>
+<section>
+	<h3>1. Ver Preferencias de los Empleados <small style="color:orange;">Lectura</small></h3>
+	{% if preferencia %}
+	<table border="1px">
+		<thead style="color:gray">
+			<tr>
+				<th>Fecha</th>
+				<th>Usuario</th>
+				<th>Comida Preferida</th>
+				<th>Personalizaciones</th>
+			</tr>
+		</thead>
+		<tbody>			
+			{% for preferencias in preferencia %}
+				<tr>
+					<td>{{ preferencias.fecha }}</td>
+					<td>{{ preferencias.idUsuario.nombre }}</td>
+					<td>{{ preferencias.preferencia }}</td>
+					<td>{{ preferencias.personaliza }}</td>
+				</tr>
+			{% endfor %}			
+		</tbody>
+	</table>
+	{% else %}
+	<p style="color:gray;">No hay preferencias ingresadas</p>
+	{% endif %}	
+</section>
+
+<br/>
+<section>
+	<div style="border-color:#CC0000;">
+	<h3>2. Agregar Menú <small style="color:orange;">Escritura</small></h3>
+	<a href="{% url 'crear_menu' %}">Ingresar Menú</a>
+	{% if menu %}
+	<table border="1px">
+		<thead>
+			<tr>
+				<th>Fecha</th>
+				<th>Menú</th>
+				<th>Opciones</th>
+			</tr>
+		</thead>
+		<tbody>			
+			{% for menus in menu %}
+				<tr>
+					<td>{{ menus.fecha }}</td>
+					<td>{{ menus.menu }}</td>	
+					<td><a href="{% url 'editar_menu' menus.idMenu %}">Editar</a> - <a href="{% url 'eliminar_menu' menus.idMenu %}">Eliminar</a></td>			
+				</tr>
+			{% endfor %}			
+		</tbody>
+	</table>
+	{% else %}
+	<p style="color:gray;">No hay menus ingresados</p>
+	{% endif %}
+	</div>		
+</section>
+
+<br/>
+<section>
+	<div style="border-color:#CC0000;">
+	<h3>3. Generar Recordatorios <small style="color:orange;">Escritura</small></h3>
+	<a href="{% url 'crear_record' %}">Generar Recordatorio</a>
+	{% if recordatorio %}
+	<table border="1px">
+		<thead>
+			<tr>
+				<th>Fecha</th>
+				<th>URL</th>
+				<th>Usuario</th>
+			</tr>
+		</thead>
+		<tbody>			
+			{% for recordatorios in recordatorio %}
+				<tr>
+					<td>{{ recordatorios.fecha }}</td>
+					<td>{{ recordatorios.url }}</td>
+					<td>{{ recordatorios.idUsuario.nombre }}</td>
+				</tr>
+			{% endfor %}			
+		</tbody>
+	</table>
+	{% else %}
+	<p style="color:gray;">No hay recordatorios ingresados</p>
+	{% endif %}
+	</div>		
+</section>
+
+{% endblock cuerpo %}

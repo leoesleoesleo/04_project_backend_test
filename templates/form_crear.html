@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block titulo %}form{% endblock titulo %}
+
+{% block cuerpo %}
+
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{ form }}
+	<button type="submit">Crear ó Editar</button>
+	
+</form>
+
+{% endblock cuerpo %}

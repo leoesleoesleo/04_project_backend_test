@@ -1,0 +1,6 @@
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<h1>Está seguro de eliminar la preferencia {{ object }}?</h1>
+	<button type="submit" name="button">Confirmar</button>
+	<button href="{% url 'index' %}">cancelar</button>
+</form>

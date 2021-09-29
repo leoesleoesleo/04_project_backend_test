@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<title>{% block titulo %}inicio{% endblock titulo%}</title>
+</head>
+
+<body>
+
+	<header>		
+		<h1>Gestor Entregas Comidas Cornershop</h1>
+	</header>
+
+	{% block cuerpo %}
+	<section>
+		<table border="1px">
+			<thead style="color:gray">
+				<tr>
+					<th>Usuario</th>
+					<th>Opciones</th>
+				</tr>
+			</thead>
+			<tbody style="color:gray">
+				{% for usuario in object_list %}
+					<tr>
+						<td>{{ usuario.nombre }}</td>
+						<td><a href="{% url 'ingresar' usuario.idUsuario %}">Ingresar</a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>		
+	</section>
+	{% endblock cuerpo %}
+
+</body>
+
+
+</html>
+

@@ -1,0 +1,62 @@
+[
+  {
+    "model": "gestorComidas.Rol",
+    "fields": {
+      "idRol": 1,
+      "nombre": "admin"      
+    }
+  },
+  {
+    "model": "gestorComidas.Rol",
+    "fields": {
+      "idRol": 2,
+      "nombre": "usuario"  
+    }
+  },
+
+  {
+    "model": "gestorComidas.Usuario",
+    "fields": {
+      "idUsuario": 1,
+      "cedula": "1256852152",
+      "nombre": "Nora",
+      "apellido": "Nora",
+      "correo": "nora@gmail.com",
+      "idRol": 1
+    }
+  },
+  {
+    "model": "gestorComidas.Usuario",
+    "fields": {
+      "idUsuario": 2,
+      "cedula": "101718666",
+      "nombre": "Leonardo",
+      "apellido": "Patino Rodriguez",
+      "correo": "leo@gmail.com",
+      "idRol": 2
+    }
+  },
+  {
+    "model": "gestorComidas.Usuario",
+    "fields": {
+      "idUsuario": 3,
+      "cedula": "1258963202",
+      "nombre": "Lucas",
+      "apellido": "Bedoya Rodriguez",
+      "correo": "lucas@gmail.com",
+      "idRol": 2
+    }
+  },
+  {
+    "model": "gestorComidas.Usuario",
+    "fields": {
+      "idUsuario": 4,
+      "cedula": "1000256322",
+      "nombre": "Santiago",
+      "apellido": "Patiño David",
+      "correo": "santiago@gmail.com",
+      "idRol": 2
+    }
+  }  
+]
+
