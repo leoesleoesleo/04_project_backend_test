@@ -53,7 +53,7 @@ def crearPreferencia(request):
 	idUsuario = str(request.session['idUsuario'])
 	horaActual = datetime.now().time().hour
 	res = 'conacceso'
-	if horaActual <= 9:
+	if horaActual <= 11:
 		if request.method == 'GET':
 			form = FormPrefer()
 		else:
