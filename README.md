@@ -19,13 +19,18 @@ Y celerys que trabaja con colas de tareas asíncrona para trabajos que se basa e
     anaconda
 	```
 	conda create -n gestorComidas python=3.7.9 
-    conda activate gestorComidas
+	```
+	```
+    	conda activate gestorComidas
+	```
 	```
 	virtualenv
 	```
 	virtualenv gestorComidas -p python3.7.9
-    source gestorComidas/bin/activate
-    ```
+    	```
+	```
+	source gestorComidas/bin/activate
+    	```
 
 - Navegar hasta la carpeta del proyecto para instalar dependencias
     ```
@@ -33,6 +38,9 @@ Y celerys que trabaja con colas de tareas asíncrona para trabajos que se basa e
     ```
     
 - Migrar la base de datos    
+    ```
+    python manage.py makemigrations
+    ```
     ```
     python manage.py migrate
     ```
