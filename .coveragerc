@@ -1,0 +1,14 @@
+[run]
+omit =
+    */migrations/*
+    */tests/*
+    */test/*
+    */tests.py
+    backend_test/settings.py
+    backend_test/wsgi.py
+    backend_test/logging_formatter.py
+	manage.py
+	gunicorn_config.py
+	backend_test/utils/__init__.py
+	backend_test/utils/healthz.py
+	backend_test/asgi.py
