@@ -8,8 +8,7 @@ from .tasks import proceso_celery
 from datetime import datetime
 import logging
 
-logging.basicConfig(level=10, format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s', datefmt='%Y-%m-%d %H:%M:%S', filename='log.log', filemode='w')
-log = logging.getLogger('')
+log = logging.getLogger(__name__) 
 
 
 def ingreso(request, idUsuario):
