@@ -22,10 +22,10 @@ def ingreso(request, idUsuario):
 		request.session['url_slack'] = 'https://nora.cornershop.io'
 		menu = Menu.objects.all()
 		rol = Usuario.objects.filter(idUsuario=idUsuario).select_related('idRol')
-		usr = Usuario.objects.filter(idUsuario=idUsuario)
-		usr = [data.nombre for data in usr][0]
+		usr = Usuario.objects.filter(idUsuario=idUsuario)		
 		try:
 			rol = [data.idRol.nombre for data in rol][0]
+			usr = [data.nombre for data in usr][0]
 		except Exception as e:
 			log.error(f'Error al acceder al rol del usuario {e}')
 		if rol == 'admin':
